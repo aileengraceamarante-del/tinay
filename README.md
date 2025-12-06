@@ -1,0 +1,121 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Skills I'm Developing</title> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+<header> 
+<h1>Welcome to My Personal Website</h1> 
+</header> 
+
+<nav> 
+<ul> 
+  <li><a href="index.html">HOME</a></li> 
+  <li class="dropdown"> 
+    <a href="#" class="dropbtn">ABOUT</a> 
+    <div class="dropdown-content"> 
+      <a href="skills.html">Skills I'm Developing</a> 
+      <a href="goals.html">My Goals as a Student</a> 
+      <a href="funfacts.html">Fun Facts About Me</a> 
+    </div> 
+  </li> 
+  <li><a href="gallery.html">GALLERY</a></li> 
+  <li><a href="contact.html">CONTACT</a></li> 
+  <li><a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a></li> 
+</ul> 
+</nav> 
+
+<section id="drop"> 
+  <h2>Skills I'm Developing</h2> 
+  <p>As a student, I’m actively developing a diverse set of skills that reflect my passions in technology and beyond.</p> 
+
+  <section id="skills"> 
+    <div class="tab"> 
+      <button class="tablinks" onclick="toggleTab(event, 'Academic Excellence')">Academic Excellence</button> 
+      <button class="tablinks" onclick="toggleTab(event, 'Communication Skills')">Communication Skills</button> 
+      <button class="tablinks" onclick="toggleTab(event, 'Creativity')">Creativity</button> 
+      <button class="tablinks" onclick="toggleTab(event, 'Leadership')">Leadership</button> 
+    </div> 
+
+    <div id="Academic Excellence" class="tabcontent" style="display:none;"> 
+      <h3>Academic Axcellence</h3> 
+      <ul> 
+        <li>Developing strong study habits and<strong>  time-management skills</strong>.</li> 
+        <li>Improving<strong>research abilities</strong> through essays, projects and reports.</li> 
+        <li>Building analytical thinking by <strong>solving academic challenges</strong>.</li> 
+      </ul> 
+    </div> 
+
+    <div id="Communication Skills" class="tabcontent" style="display:none;"> 
+      <h3>Communication skills</h3> 
+      <ul> 
+        <li>Practicing clear and confident speaking in presentation.</li> 
+        <li>Enhancing writing skills for school papers and assignment.</li> 
+        <li>Learning how to collaborate effectively in group activities.</li> 
+      </ul> 
+    </div> 
+
+    <div id="Creativity" class="tabcontent" style="display:none;"> 
+      <h3>Creativity and Innovation</h3> 
+      <ul> 
+        <li>Exploring creative thinking through art, design, or school projects.</li> 
+        <li>Learning to brainstorm new ideas and solve problems creatively.</li> 
+        <li>Use digital tools to create unique projects and presentations.</li> 
+      </ul> 
+    </div> 
+
+    <div id="Leadership" class="tabcontent" style="display:none;"> 
+      <h3>Leadership and Teamwork</h3> 
+      <ul> 
+        <li>Taking initiative in group tasks and school organizations.</li> 
+        <li>Learning how to guide and motivate classmate during activities.</li> 
+        <li>Building cooperation skills by working with diverse teams.</li> 
+      </ul> 
+    </div> 
+  </section> 
+</section> 
+
+<footer> 
+  <p>&copy; 2025 Aileen Grace Amarante. All rights reserved.</p> 
+</footer> 
+
+<div class="footer-divider"></div> 
+
+<!-- Embedded JavaScript --> 
+<script> 
+function toggleTab(evt, tabName) { 
+  const clickedTab = document.getElementById(tabName);
+  const isVisible = clickedTab.style.display === "block"; 
+
+  // Hide all tab content first
+  const tabcontents = document.getElementsByClassName("tabcontent"); 
+  for (let i = 0; i < tabcontents.length; i++) { 
+    tabcontents[i].style.display = "none"; 
+  } 
+
+  // Remove "active" class from all tab buttons
+  const tablinks = document.getElementsByClassName("tablinks"); 
+  for (let i = 0; i < tablinks.length; i++) { 
+    tablinks[i].classList.remove("active"); 
+  } 
+
+  // Toggle: show if hidden, hide if already visible
+  if (!isVisible) {
+    clickedTab.style.display = "block"; 
+    evt.currentTarget.classList.add("active"); 
+  }
+}
+
+function confirmLogout() { 
+  const confirmLogout = confirm("Are you sure you want to log out?"); 
+  if (confirmLogout) { 
+    localStorage.removeItem('isLoggedIn'); 
+    window.location.href = 'login.html'; 
+  } 
+} 
+</script> 
+</body> 
+</html>
