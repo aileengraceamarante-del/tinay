@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Personal Website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Welcome to My Personal Website</h1>
+</header>
+<nav>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li class="dropdown">
+<a href="#" class="dropbtn">ABOUT</a>
+<div class="dropdown-content">
+<a href="skills.html">Skills I'm Developing</a>
+<a href="goals.html">My Goals as a Student</a>
+<a href="funfacts.html">Fun Facts About Me</a>
+</div>
+</li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+<a href="javascript:void(0);" class="logout-button" onclick="confirmLogout()">LOG OUT</a>
+</ul>
+</nav>
+<div class="slider">
+<div class="slides">
+<div class="slide">
+<img src="C:\Users\ALLE AMARANTE\Desktop\Aileen Website -New\images\White And Colorful Polaroid Photo Collage Instagram Post.png" alt="Image 1">
+<div class="text-overlay"><h1> 
+</h1></div>
+</div>
+<div class="slide">
+<img src="C:\Users\ALLE AMARANTE\Desktop\Aileen Website -New\images\477527771_1380348253291149_2587767156382043269_n.jpg" alt="Image 2">
+<div class="text-overlay"><h1> </h1></div>
+</div>
+<div class="slide">
+<img src="C:\Users\ALLE AMARANTE\Desktop\Aileen Website -New\images\Screenshot_20250918_075642.jpg" alt="Image 3">
+<div class="text-overlay"><h1> </h1></div>
+</div>
+</div>
+</div>
+
+<section id="drop">
+<h2>Fun Facts About Me</h2>
+<p>Welcome to my Fun Facts About Me! Here, you'll get a
+glimpse into my passions, interests, and the little quirks that make me who I am. </p>
+<div class="funfact-container">
+<div class="funfact-card">
+<div class="funfact-inner">
+<div class="funfact-front">
+<p>Expert in Makeup!</p>
+</div>
+<div class="funfact-back">
+<p>I keep inspiring other people that love make up beacause its makes me confident and I want 
+to improve my skills in makeup!</p>
+</div>
+</div>
+</div>
+<div class="funfact-card">
+<div class="funfact-inner">
+<div class="funfact-front">
+<p>I love Dancing!</p>
+</div>
+<div class="funfact-back">
+<p>I can dance while im cleaning the house and make me feel happy and not boring!</p>
+</div>
+</div>
+</div>
+<div class="funfact-card">
+<div class="funfact-inner">
+<div class="funfact-front">
+<p>MilkTea Explorer!</p>
+</div>
+<div class="funfact-back">
+<p>I’m on a mission to try every milktea shop in my town!</p>
+</div>
+</div>
+</div>
+<div class="funfact-card">
+<div class="funfact-inner">
+<div class="funfact-front">
+<p>Food + Music Combo!  </p>
+</div>
+<div class="funfact-back">
+<p>My best code happens when I’m listening to OPM and 
+RNB!</p>
+</div>
+</div>
+</div>
+</div>
+<div class="see-more-container">
+<a href="funfacts.html" class="see-more-button">See More
+Funfacts</a>
+</div>
+</section>
+
+<div class="container">
+<div class="image-section">
+<img src="C:\Users\ALLE AMARANTE\Desktop\Aileen Website -New\images\491728663_1431179878207986_2076364942365991562_n.jpg" alt="Aileen's image">
+</div>
+<div class="quote-section">
+<h1>Hi, I'm Aileen!</h1>
+<p> I'm Aileen Grace A. Amarante from Lipata, Culasi, Antique I am 19 years old.
+I currently studied at University of Antique Tario-Lim Memorial Campus taken 
+the Bachelor of Science in Information Technology. I loves explore new ideas and I
+ enjoy learning how technology connects people and makes everyday
+life easier. I want to learn front-end design, digital art, and exploring new tools that 
+enhance creativity. I'm passionate about self-improvement, teamwork, and sharing
+ideas that inspire innovation. Always eager to grow, learn, and make a difference through technology!</p>
+
+<blockquote>
+"A DREAM DOESN'T BECOME REALITY THROUGH MAGIC, IT TAKES SWEAT, DETERMINATION AND HARDWORK."
+</blockquote>
+</div>
+</div>
+<div class="footer-divider"></div>
+<footer>
+<p>&copy; 2025 Aileen Grace Amarante.  All rights reserved.</p>
+</footer>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+<span class="close" onclick="event.stopPropagation(); closeLightbox()">&times;</span>
+<img class="lightbox-content" id="lightboxImage" src="">
+</div>
+<script>
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+    let index = 0;
+
+    function showNextSlide() {
+        // Corrected the hardcoded '3' to a dynamic slide count
+        index = (index + 1) % totalSlides; 
+        slides.style.transform = 'translateX(' + (-index * 100) + '%)';
+    }
+
+    setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+
+    function openLightbox(imageSrc) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        lightboxImage.src = imageSrc;
+        lightbox.style.display = 'block';
+
+        // Hide header and nav
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('nav').style.display = 'none';
+    }
+
+    function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.style.display = 'none';
+
+        // Show header and nav
+        document.querySelector('header').style.display = 'block';
+        document.querySelector('nav').style.display = 'flex'; // Shows the nav
+    }
+
+    // Removed the incorrect JavaScript block for a non-existent dropdown menu for the logout button
+</script>
+<script>
+    // Logout function with confirmation
+    function confirmLogout() {
+        // Show a confirmation message to the user
+        const confirmLogout = confirm("Are you sure you want to log out?");
+
+        // If the user confirms, proceed with logging out
+        if (confirmLogout) {
+            // Mark the user as logged out in localStorage (if used)
+            localStorage.removeItem('isLoggedIn');
+            // Redirect to the login page
+            window.location.href = 'file:///C:/Users/ALLE%20AMARANTE/Desktop/Aileen%20Website%20-New/login.html';
+        } else {
+            // If the user cancels, do nothing
+            return;
+        }
+    }
+</script>
+</body>
+</html>
